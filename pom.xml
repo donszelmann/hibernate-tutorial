@@ -8,6 +8,7 @@
     <artifactId>hibernate-tutorial</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <name>First Hibernate Tutorial</name>
+    <packaging>war</packaging>
 
     <build>
          <!-- we dont want the version to be part of the generated war file name -->

@@ -1,6 +1,6 @@
 package org.hibernate.tutorial.domain;
 
-import java.util.Date;
+import java.util.*;
 
 public class Event {
     private Long id;
@@ -32,6 +32,26 @@ public class Event {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    private Set participants = new HashSet();
+
+    protected Set getParticipants() {
+        return participants;
+    }
+
+    protected void setParticipants(Set participants) {
+        this.participants = participants;
+    }
+
+    public void addToPerson(Person p) {
+        this.getParticipants().add(p);
+        p.getEvents().add(this);
+    }
+
+    public void removeFromPerson(Person p) {
+        this.getParticipants().remove(p);
+        p.getEvents().remove(this);
     }
 }
 
